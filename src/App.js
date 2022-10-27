@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
+import { Breweries } from "./components/Breweries";
+
 function App() {
   const [breweries, setBreweries] = useState();
 
@@ -22,11 +24,12 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <p>
+      {/* <p>
         {!breweries
           ? "Looking for breweries..."
           : breweries.map((brewery) => brewery.name)}
-      </p>
+      </p> */}
+      <Breweries breweries={breweries} />
     </div>
   );
 }
