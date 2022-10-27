@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Breweries } from "./components/Breweries";
+import { BreweryDetails } from "./components/BreweryDetails";
 
 function App() {
   const [breweries, setBreweries] = useState();
@@ -23,14 +23,17 @@ function App() {
     fetchBreweries();
   }, []);
   return (
-    <div className="App">
-      {/* <p>
-        {!breweries
-          ? "Looking for breweries..."
-          : breweries.map((brewery) => brewery.name)}
-      </p> */}
-      <Breweries breweries={breweries} />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" exact element={<Breweries breweries={breweries} />} />
+          <Route
+            path="/brewerydetails/:breweryId"
+            element={<BreweryDetails />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

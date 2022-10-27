@@ -11,6 +11,7 @@ export const Breweries = (props) => {
       {props.breweries.map((brewery) => (
         <Brewery
           key={brewery.id}
+          id={brewery.id}
           name={brewery.name}
           type={brewery.brewery_type}
           street={brewery.street}
