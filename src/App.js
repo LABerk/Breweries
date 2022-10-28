@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Breweries } from "./components/Breweries";
 import { BreweryDetails } from "./components/BreweryDetails";
+import "./styles.css";
 
 function App() {
   const [breweries, setBreweries] = useState(null);
@@ -16,7 +17,7 @@ function App() {
         console.log(json);
         setBreweries(json);
       } catch (err) {
-        console.log("There was a problem fetching brewery data", err);
+        console.log("There was an error", err);
       }
     };
 

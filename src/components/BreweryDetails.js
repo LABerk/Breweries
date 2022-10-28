@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { MapView } from "./MapView";
 
 export const BreweryDetails = () => {
   const params = useParams();
-  console.log("params", params);
 
   const [breweryName, setBreweryName] = useState("");
   const [brewerySt, setBrewerySt] = useState("");
   const [breweryCity, setBreweryCity] = useState("");
   const [breweryState, setBreweryState] = useState("");
   const [breweryZip, setBreweryZip] = useState("");
-  //MAP state
+  const [breweryLat, setBreweryLat] = useState("");
+  const [breweryLon, setBreweryLon] = useState("");
 
   useEffect(() => {
     const fetchBrewery = async () => {
@@ -25,6 +26,8 @@ export const BreweryDetails = () => {
         setBreweryCity(json[0].city);
         setBreweryState(json[0].state);
         setBreweryZip(json[0].zip);
+        setBreweryLat(json[0].latitude);
+        setBreweryLon(json[0].longitude);
       } catch (err) {
         console.log("There was a problem fetching brewery data", err);
       }
@@ -35,12 +38,19 @@ export const BreweryDetails = () => {
 
   return (
     <div>
-      <h2>{breweryName}</h2>
-      <h3>{brewerySt}</h3>
-      <h3>{breweryCity}</h3>
-      <h3>{breweryState}</h3>
-      <h3>{breweryZip}</h3>
+      <div>
+        <h2>{breweryName}</h2>
+        <h3>{brewerySt}</h3>
+        <h3>{breweryCity}</h3>
+        <h3>{breweryState}</h3>
+        <h3>{breweryZip}</h3>
+        <h5>{breweryLat}</h5>
+        <h5>{breweryLon}</h5>
+      </div>
 
+      <div>
+        <MapView lat={breweryLat} lon={breweryLon} />
+      </div>
       <Link to="/">Back to all Breweries</Link>
     </div>
   );
