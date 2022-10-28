@@ -12,7 +12,7 @@ export const MapView = (props) => {
   };
 
   return (
-    <div style={{ height: "50vh", width: "100%" }}>
+    <div style={{ height: "50vh", width: "50%" }}>
       <GoogleMapReact
         yesIWantToUseGoogleMapApiInternals={true}
         bootstrapURLKeys={{
