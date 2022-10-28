@@ -4,11 +4,11 @@ import { Breweries } from "./components/Breweries";
 import { BreweryDetails } from "./components/BreweryDetails";
 
 function App() {
-  const [breweries, setBreweries] = useState();
+  const [breweries, setBreweries] = useState(null);
 
   useEffect(() => {
     const apiUrl =
-      "https://api.openbrewerydb.org/breweries?by_city=milwaukee&per_page=5";
+      "https://api.openbrewerydb.org/breweries?by_city=milwaukee&per_page=30";
     const fetchBreweries = async () => {
       try {
         const response = await fetch(apiUrl);
@@ -27,10 +27,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" exact element={<Breweries breweries={breweries} />} />
-          <Route
-            path="/brewerydetails/:breweryId"
-            element={<BreweryDetails />}
-          />
+          <Route path="/brewerydetails/:name" element={<BreweryDetails />} />
         </Routes>
       </div>
     </Router>
