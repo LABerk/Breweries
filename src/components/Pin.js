@@ -1,5 +1,5 @@
 import React from "react";
 
-export const Pin = () => {
-  <div className="pin"></div>;
+export const Pin = (props) => {
+  <div className="pin">{props.text}</div>;
 };

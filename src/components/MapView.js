@@ -1,6 +1,7 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import { Pin } from "./Pin";
+import "../styles.css";
 
 export const MapView = (props) => {
   const defaultProps = {
