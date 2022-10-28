@@ -49,7 +49,7 @@ export const BreweryDetails = () => {
       </div>
 
       <div>
-        <MapView lat={breweryLat} lon={breweryLon} />
+        <MapView center={[breweryLat, breweryLon]} />
       </div>
       <Link to="/">Back to all Breweries</Link>
     </div>
