@@ -1,6 +1,5 @@
 import React from "react";
 import { Brewery } from "./Brewery";
-import { Pin } from "./Pin";
 
 export const Breweries = (props) => {
   if (!props.breweries) {
@@ -9,8 +8,7 @@ export const Breweries = (props) => {
 
   return (
     <div>
-      <Pin />
-      <ul>
+      <div className="container">
         {props.breweries.map((brewery) => (
           <Brewery
             key={brewery.id}
@@ -24,7 +22,7 @@ export const Breweries = (props) => {
             website={brewery.website_url}
           />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

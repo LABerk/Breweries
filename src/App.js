@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Breweries } from "./components/Breweries";
 import { BreweryDetails } from "./components/BreweryDetails";
-import "./styles.css";
+
+import "./App.scss";
 
 function App() {
   const [breweries, setBreweries] = useState(null);

@@ -44,13 +44,11 @@ export const BreweryDetails = () => {
   return (
     <div>
       <div>
-        <h2>{breweryName}</h2>
+        <h2 className="breweryName">{breweryName}</h2>
         <h3>{brewerySt}</h3>
         <h3>{breweryCity}</h3>
         <h3>{breweryState}</h3>
         <h3>{breweryZip}</h3>
-        <h5>{breweryLat}</h5>
-        <h5>{breweryLng}</h5>
       </div>
 
       <div>

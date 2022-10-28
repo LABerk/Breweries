@@ -1,0 +1,56 @@
+.App {
+  background-color: #a3b18a;
+  font-family: "Roboto", sans-serif;
+  font-size: larger;
+  font-weight: bolder;
+  font: #a0a4b8;
+}
+
+h3 {
+  color: #344e41;
+}
+
+a {
+  color: #344e41;
+}
+a:hover {
+  color: #75875a;
+}
+.breweryName {
+  color: #344e41;
+}
+
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.breweryCards {
+  position: relative;
+  justify-content: center;
+
+  width: 400px;
+  padding: 15px;
+}
+
+.breweryCards:hover {
+  background-color: #bbc6a9;
+}
+
+.noDecoration {
+  text-decoration: none;
+}
+
+.pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background-color: #000;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  user-select: none;
+  transform: translate(-50%, -50%);
+}

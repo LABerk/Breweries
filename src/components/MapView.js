@@ -1,7 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import { Pin } from "./Pin";
-import "../styles.css";
 
 export const MapView = (props) => {
   const defaultProps = {
@@ -17,7 +16,7 @@ export const MapView = (props) => {
       <GoogleMapReact
         yesIWantToUseGoogleMapApiInternals={true}
         bootstrapURLKeys={{
-          key: "",
+          key: "AIzaSyD3uyEPu-5R3Gdn4OCTEv0PwzN9cF4hCQU",
         }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}

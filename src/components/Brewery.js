@@ -7,21 +7,23 @@ export const Brewery = (props) => {
   };
 
   return (
-    <Link to={`/brewerydetails/${props.name}`}>
-      <h2>{props.name}</h2>
-      <h3>{props.type}</h3>
-      <h3>{props.street}</h3>
-      <h3>{props.city}</h3>
-      <h3>{props.state}</h3>
-      <h3>{props.zip}</h3>
-      <a
-        onClick={externalLinkHandler}
-        href={props.website}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {props.website}
-      </a>
-    </Link>
+    <div className="breweryCards">
+      <Link className="noDecoration" to={`/brewerydetails/${props.name}`}>
+        <h2 className="breweryName">{props.name}</h2>
+        <h3>{props.type}</h3>
+        <h3>{props.street}</h3>
+        <h3>{props.city}</h3>
+        <h3>{props.state}</h3>
+        <h3>{props.zip}</h3>
+        <a
+          onClick={externalLinkHandler}
+          href={props.website}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {props.website}
+        </a>
+      </Link>
+    </div>
   );
 };
