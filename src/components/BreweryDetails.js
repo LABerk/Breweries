@@ -11,7 +11,7 @@ export const BreweryDetails = () => {
   const [breweryState, setBreweryState] = useState("");
   const [breweryZip, setBreweryZip] = useState("");
   const [breweryLat, setBreweryLat] = useState("");
-  const [breweryLon, setBreweryLon] = useState("");
+  const [breweryLng, setBreweryLng] = useState("");
 
   useEffect(() => {
     const fetchBrewery = async () => {
@@ -27,7 +27,7 @@ export const BreweryDetails = () => {
         setBreweryState(json[0].state);
         setBreweryZip(json[0].zip);
         setBreweryLat(json[0].latitude);
-        setBreweryLon(json[0].longitude);
+        setBreweryLng(json[0].longitude);
       } catch (err) {
         console.log("There was a problem fetching brewery data", err);
       }
@@ -35,6 +35,11 @@ export const BreweryDetails = () => {
 
     fetchBrewery();
   }, [params.name, breweryName]);
+
+  const breweryLatNum = Number(breweryLat);
+  console.log(breweryLatNum);
+  const breweryLngNum = Number(breweryLng);
+  console.log(breweryLngNum);
 
   return (
     <div>
@@ -45,11 +50,16 @@ export const BreweryDetails = () => {
         <h3>{breweryState}</h3>
         <h3>{breweryZip}</h3>
         <h5>{breweryLat}</h5>
-        <h5>{breweryLon}</h5>
+        <h5>{breweryLng}</h5>
       </div>
 
       <div>
-        <MapView center={[breweryLat, breweryLon]} />
+        <MapView
+          center={[breweryLatNum, breweryLngNum]}
+          lat={breweryLat}
+          lng={breweryLng}
+          text={breweryName}
+        />
       </div>
       <Link to="/">Back to all Breweries</Link>
     </div>
