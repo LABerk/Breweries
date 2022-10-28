@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Address } from "./Address";
 
 export const Brewery = (props) => {
   const externalLinkHandler = (e) => {
@@ -10,11 +11,14 @@ export const Brewery = (props) => {
     <div className="breweryCards">
       <Link className="noDecoration" to={`/brewerydetails/${props.name}`}>
         <h2 className="breweryName">{props.name}</h2>
-        <h3>{props.type}</h3>
-        <h3>{props.street}</h3>
-        <h3>{props.city}</h3>
-        <h3>{props.state}</h3>
-        <h3>{props.zip}</h3>
+        <h3>{props.type} BREWERY</h3>
+        <Address
+          street={props.street}
+          city={props.city}
+          state={props.state}
+          zip={props.zip}
+        />
+
         <a
           onClick={externalLinkHandler}
           href={props.website}

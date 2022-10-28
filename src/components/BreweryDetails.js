@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { MapView } from "./MapView";
+import { Address } from "./Address";
 
 export const BreweryDetails = () => {
   const params = useParams();
@@ -25,7 +26,7 @@ export const BreweryDetails = () => {
         setBrewerySt(json[0].street);
         setBreweryCity(json[0].city);
         setBreweryState(json[0].state);
-        setBreweryZip(json[0].zip);
+        setBreweryZip(json[0].postal_code);
         setBreweryLat(json[0].latitude);
         setBreweryLng(json[0].longitude);
       } catch (err) {
@@ -45,10 +46,12 @@ export const BreweryDetails = () => {
     <div>
       <div>
         <h2 className="breweryName">{breweryName}</h2>
-        <h3>{brewerySt}</h3>
-        <h3>{breweryCity}</h3>
-        <h3>{breweryState}</h3>
-        <h3>{breweryZip}</h3>
+        <Address
+          street={brewerySt}
+          city={breweryCity}
+          state={breweryState}
+          zip={breweryZip}
+        />
       </div>
 
       <div>
