@@ -16,7 +16,7 @@ export const MapView = (props) => {
       <GoogleMapReact
         yesIWantToUseGoogleMapApiInternals={true}
         bootstrapURLKeys={{
-          key: "AIzaSyD3uyEPu-5R3Gdn4OCTEv0PwzN9cF4hCQU",
+          key: "",
         }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
