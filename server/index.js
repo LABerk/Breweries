@@ -13,10 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const routes = require("./routes/routes.js")(app, fs);
 
-app.get("/", (req, res) => {
-  res.send({ express: "YOUR EXPRESS BACKEND IS CONNECTED TO REACT" });
-});
-
 app.listen(PORT, () => {
   console.log(`Hops brewing on ${PORT}`);
 });
